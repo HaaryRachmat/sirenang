@@ -1,0 +1,104 @@
+Catatan Tutorial
+Project sekarang sp4-arsip-ci4
+18 E-Arsip Codeigniter 4 -View Total Data (CountAll) Menit 10.10
+
+
+https://getbootstrap.com/docs/5.0/utilities/text/
+https://www.petanikode.com/codeigniter4-view/
+
+
+Project e-arsip-ci4 satu lagi
+03 E-Arsip Codeigniter 4 - Auth, Login, Dan Logout Menit 36.18
+
+1. WithInput()
+YT : Tutorial CodeIgniter 4 untuk PEMULA | 10. Validation menit 18.33
+
+
+2. Codeigniter 4 Pagination with join tables showing error
+Sumber : https://stackoverflow.com/questions/65275626/codeigniter-4-pagination-with-join-tables-showing-error
+
+3. Kata Kunci search dropdown
+"search dropdown codeigniter 4"
+
+4. Form validation Petani Kode
+https://www.petanikode.com/codeigniter-validation/
+
+5. Cara Buat data Table Bootstrap 5 YT
+sumber : CodeIgniter4 - Part-13: How to make Search box and Pagination using DataTables in codeigniter 4
+
+
+6. Yang harus di tambahkan di project codeigniter 4 E-arsip
+    - search di arsip dan user belum bisa karna join table
+    - default foto di tambah user
+    -  akses tambah user di hapus di user role user
+
+7. code untuk buat pagination manual
+ <?= $pager->links('tbl_kategori', 'my_pagination') ?>
+
+8. Membuat Value old
+value="<?= old('nama_arsip'); ?>"
+
+
+- code error v_add
+<div class="modal-body"> 
+                        <?= form_open_multipart('user/insert'); ?>
+
+                        <div class="form-group">
+                            <label class="form-label ml-2">Nama User</label>
+                            <input type="text" class="form-control <?= ($validation->hasError('nama_user')) ? 'is-invalid' : ''; ?>" name="nama_user" placeholder="Masukkan Nama user" value="<?= old('nama_user'); ?>">
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('nama_user'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label ml-2">E-mail</label>
+                            <input type="text" class="form-control  <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" name="email" placeholder="Masukkan Alamat E-mail">
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('email'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label ml-2">Password</label>
+                            <input type="password" class="form-control  <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" name="password" placeholder="Masukkan Password" value="<?= old('password'); ?>">
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('password'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label ml-2">Level</label>
+                            <select class="form-control  <?= ($validation->hasError('level')) ? 'is-invalid' : ''; ?>" name="level" id="exampleFormControlSelect1" value="<?= old('level'); ?>">
+                                <option>--Pilih Level--</option>
+                                <option value="1">Admin</option>
+                                <option value="2">User</option>
+                            </select>
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('level'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label ml-2">Dep</label>
+                            <select class="form-control  <?= ($validation->hasError('id_dep')) ? 'is-invalid' : ''; ?>" name="id_dep" id="exampleFormControlSelect1" value="<?= old('id_dep'); ?>">
+                                <option>--Pilih Department --</option>
+                                <?php foreach ($dep as $key => $value) { ?>
+                                    <option value="<?= $value['id_dep']; ?>"> <?= $value['nama_dep']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('id_dep'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label ml-2">Foto Profil</label>
+                            <input type="file" class="form-control  <?= ($validation->hasError('foto')) ? 'is-invalid' : ''; ?>" name="foto" value="<?= old('id_dep'); ?>">
+                            <div class="invalid-feedback ml-2">
+                                <?= $validation->getError('foto'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                            <a href="<?= base_url('user'); ?>" class="btn btn-warning">Kembali</a>
+                        </div>
+                        <?= form_close(); ?>
+                    </div>
+
+
